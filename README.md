@@ -125,22 +125,29 @@ make -j4
 make -j4 modules
 ## External files/MODULES to add to platform compile
 
+
+
+
+
 PRODUCT_COPY_FILES += \
-$(MOD_SRC)/michael_mic.ko:$(MOD_TGT)/michael_mic.ko \
-$(MOD_SRC)/i2c-stub.ko:$(MOD_TGT)/i2c-stub.ko \
-$(MOD_SRC)/comedi.ko:$(MOD_TGT)/comedi.ko \
-$(MOD_SRC)/kcomedilib.ko:$(MOD_TGT)/kcomedilib.ko \
-$(MOD_SRC)/comedi_bond.ko:$(MOD_TGT)/comedi_bond.ko \
-$(MOD_SRC)/comedi_test.ko:$(MOD_TGT)/comedi_test.ko \
-$(MOD_SRC)/comedi_parport.ko:$(MOD_TGT)/comedi_parport.ko \
-$(MOD_SRC)/serial2002.ko:$(MOD_TGT)/serial2002.ko \
-$(MOD_SRC)/skel.ko:$(MOD_TGT)/skel.ko \
-$(MOD_SRC)/dt9812.ko:$(MOD_TGT)/dt9812.ko \
-$(MOD_SRC)/usbdux.ko:$(MOD_TGT)/usbdux.ko \
-$(MOD_SRC)/usbduxfast.ko:$(MOD_TGT)/usbduxfast.ko \
-$(MOD_SRC)/usbduxsigma.ko:$(MOD_TGT)/usbduzsigma.ko \
-$(MOD_SRC)/vmk80xx.ko:$(MOD_TGT)/vmk80xx.ko \
-$(MOD_SRC)/8255.ko:$(MOD_TGT)/8255.ko \
-$(MOD_SRC)/comedi_fc.ko:$(MOD_TGT)/comedi_fc.ko \
-$(MOD_SRC)/vt6656_stage.ko:$(MOD_TGT)/vt6656_stage.ko \
-$(MOD_SRC)/lib80211.ko:$(MOD_TGT)/lib80211.ko
+	$(LOCAL_KERNEL):kernel \
+$(LOCAL_PATH)/michael_mic.ko:root/michael_mic.ko \
+$(LOCAL_PATH)/i2c-stub.ko:root/i2c-stub.ko \
+$(LOCAL_PATH)/comedi.ko:root/comedi.ko \
+$(LOCAL_PATH)/kcomedilib.ko:root/kcomedilib.ko \
+$(LOCAL_PATH)/comedi_bond.ko:root/comedi_bond.ko \
+$(LOCAL_PATH)/comedi_test.ko:root/comedi_test.ko \
+$(LOCAL_PATH)/comedi_parport.ko:root/comedi_parport.ko \
+$(LOCAL_PATH)/serial2002.ko:root/serial2002.ko \
+$(LOCAL_PATH)/skel.ko:root/skel.ko \
+$(LOCAL_PATH)/dt9812.ko:root/dt9812.ko \
+$(LOCAL_PATH)/usbdux.ko:root/usbdux.ko \
+$(LOCAL_PATH)/usbduxfast.ko:root/usbduxfast.ko \
+$(LOCAL_PATH)/usbduxsigma.ko:root/usbduzsigma.ko \
+$(LOCAL_PATH)/vmk80xx.ko:root/vmk80xx.ko \
+$(LOCAL_PATH)/8255.ko:root/8255.ko \
+$(LOCAL_PATH)/comedi_fc.ko:root/comedi_fc.ko \
+$(LOCAL_PATH)/vt6656_stage.ko:root/vt6656_stage.ko \
+$(LOCAL_PATH)/lib80211.ko:root/lib80211.ko \
+$(LOCAL_PATH)/init.recovery.universal3475.rc:root/init.recovery.samsungexynos3475.rc \
+$(LOCAL_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab
