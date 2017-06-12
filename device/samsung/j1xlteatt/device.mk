@@ -1,0 +1,42 @@
+#
+# Copyright 2014 The Android Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/j1xlteatt-kernel/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES := \
+	$(LOCAL_KERNEL):kernel
+
+$(call inherit-product-if-exists, vendor/samsung/j1xlteatt/device-vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+DEVICE_PACKAGE_OVERLAYS += device/samsung/j1xlteatt/overlay
+
+LOCAL_PATH := device/samsung/j1xlteatt
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := $(LOCAL_PATH)/kernAl
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_PATH)/init.recovery.universal3475.rc:root/init.recovery.samsungexynos3475.rc \
+    $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab
+    

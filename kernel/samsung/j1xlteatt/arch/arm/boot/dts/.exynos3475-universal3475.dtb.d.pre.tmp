@@ -1,0 +1,5 @@
+exynos3475-universal3475.o: \
+ arch/arm/boot/dts/exynos3475-universal3475.dts \
+ arch/arm/boot/dts/exynos3475.dtsi arch/arm/boot/dts/skeleton.dtsi \
+ /home/lev3lz/aosp/kernel/samsung/j1xlteatt/arch/arm/boot/dts/include/dt-bindings/clock/exynos3475.h \
+ /home/lev3lz/aosp/kernel/samsung/j1xlteatt/arch/arm/boot/dts/include/dt-bindings/sysmmu/sysmmu.h
